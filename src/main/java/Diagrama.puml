@@ -1,14 +1,38 @@
 @startuml
-'https://plantuml.com/class-diagram
+title Diagrama UML - Calculo de areas con metodos (OCP y LSP)
 
-abstract class Figura{
--calculararea()
+interface Figura {
+    +calcularArea(): double
 }
-class circulo{}
-class rectangulo{}
-class triangulo{}
-class calculadoradearea{}
 
+class Circulo {
+    -radio: double
+    +Circulo(radio: double)
+    +calcularArea(): double
+}
 
+class Rectangulo {
+    -base: double
+    -altura: double
+    +Rectangulo(base: double, altura: double)
+    +calcularArea(): double
+}
+
+class Triangulo {
+    -base: double
+    -altura: double
+    +Triangulo(base: double, altura: double)
+    +calcularArea(): double
+}
+
+class CalculadoraDeAreas {
+
+    +calcularAreaTotal(figuras: List<Figura>): double
+}
+
+Figura <|.. Circulo
+Figura <|.. Rectangulo
+Figura <|.. Triangulo
+CalculadoraDeAreas --> "1..*" Figura : usa
 
 @enduml
