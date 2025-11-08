@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Figura{
+-calculararea()
+}
+class circulo{}
+class rectangulo{}
+class triangulo{}
+class calculadoradearea{}
+
+
+
+@enduml
